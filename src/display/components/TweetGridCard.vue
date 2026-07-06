@@ -14,7 +14,7 @@ const emit = defineEmits<{
 
 const selectionStore = useSelectionStore()
 const avatarError = ref(false)
-const avatarUrl = computed(() => `https://unavatar.io/twitter/${props.tweet.handle}`)
+const avatarLetter = computed(() => props.tweet.author.charAt(0) || props.tweet.handle.charAt(1) || '?')
 
 function onCheckboxClick(e: Event) {
   e.stopPropagation()
@@ -35,8 +35,7 @@ function onCheckboxClick(e: Event) {
     <div class="card-body">{{ tweet.contentText }}</div>
     <div class="card-footer">
       <div class="card-footer-avatar">
-        <img v-if="!avatarError" :src="avatarUrl" class="card-avatar-img" alt="" referrerpolicy="no-referrer" @error="avatarError = true" />
-        <span v-else class="card-avatar-fallback">{{ tweet.author.charAt(0) }}</span>
+        <span class="card-avatar-fallback">{{ avatarLetter }}</span>
       </div>
       <div class="card-footer-text">
         <span class="card-author">{{ tweet.author }}</span>

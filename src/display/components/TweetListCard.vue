@@ -8,7 +8,7 @@ const props = defineProps<{ tweet: CollectedTweet }>()
 const emit = defineEmits<{ click: []; delete: [id: string] }>()
 const selectionStore = useSelectionStore()
 const displayDate = computed(() => formatDate(props.tweet.postedAt))
-const avatarUrl = computed(() => `https://unavatar.io/twitter/${props.tweet.handle}`)
+const avatarLetter = computed(() => props.tweet.author.charAt(0) || props.tweet.handle.charAt(1) || '?')
 const avatarError = ref(false)
 
 function onCheckboxClick(e: Event) { e.stopPropagation(); selectionStore.toggle(props.tweet.id) }
@@ -22,8 +22,7 @@ function onCheckboxClick(e: Event) { e.stopPropagation(); selectionStore.toggle(
     <div class="list-content">
       <div class="list-author-row">
         <div class="list-avatar">
-          <img v-if="!avatarError" :src="avatarUrl" class="list-avatar-img" alt="" referrerpolicy="no-referrer" @error="avatarError = true" />
-          <span v-else class="list-avatar-fallback">{{ tweet.author.charAt(0) }}</span>
+          <span class="list-avatar-fallback">{{ avatarLetter }}</span>
         </div>
         <div class="list-author-text">
           <span class="list-name">{{ tweet.author }}</span>

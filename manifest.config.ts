@@ -13,7 +13,7 @@ export default defineManifest({
   host_permissions: [
     'https://x.com/*',
     'https://twitter.com/*',
-    'https://publish.twitter.com/*',
+    'https://publish.twitter.com/oembed*',
   ],
   background: {
     service_worker: 'src/background/index.ts',
@@ -32,8 +32,8 @@ export default defineManifest({
   ],
   web_accessible_resources: [
     {
-      resources: ['src/display/index.html', 'widgets.js'],
-      matches: ['<all_urls>'],
+      resources: ['widgets.js'],
+      matches: ['https://x.com/*', 'https://twitter.com/*'],
     },
   ],
   icons: {

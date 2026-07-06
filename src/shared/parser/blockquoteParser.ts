@@ -67,10 +67,13 @@ export function parseBlockquote(html: string): ParsedTweet | null {
     }
   })
 
-  // 9. Clean blockquote HTML (remove embedded <script>)
+  // 9. Clean blockquote HTML (remove embedded <script>, sanitize)
   const bqClone = bq.cloneNode(true) as Element
   bqClone.querySelectorAll('script').forEach(s => s.remove())
-  const blockquoteHtml = bqClone.outerHTML
+  const blockquoteHtml = DOMPurify.sanitize(bqClone.outerHTML, {
+    ALLOWED_TAGS: ['blockquote', 'a', 'p', 'br', 'img'],
+    ALLOWED_ATTR: ['class', 'href', 'src', 'alt', 'lang', 'dir', 'cite'],
+  })
 
   // 10. Sanitize content HTML
   const sanitizedContentHtml = DOMPurify.sanitize(contentHtml, {

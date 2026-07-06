@@ -13,10 +13,8 @@ const isShortTweet = computed(() => props.tweet.contentText.length < 140)
 const imgError = ref(false)
 const avatarError = ref(false)
 
-// Twitter avatar via unavatar.io (free, no API key needed)
-const avatarUrl = computed(() =>
-  `https://unavatar.io/twitter/${props.tweet.handle}`
-)
+// Local letter avatar (no external requests)
+const avatarLetter = computed(() => props.tweet.author.charAt(0) || props.tweet.handle.charAt(1) || '?')
 </script>
 
 <template>
@@ -24,15 +22,7 @@ const avatarUrl = computed(() =>
     <!-- Author row -->
     <div class="tweet-author">
       <div class="tweet-avatar">
-        <img
-          v-if="!avatarError"
-          :src="avatarUrl"
-          class="tweet-avatar-img"
-          alt=""
-          referrerpolicy="no-referrer"
-          @error="avatarError = true"
-        />
-        <span v-else class="tweet-avatar-fallback">{{ tweet.author.charAt(0) }}</span>
+        <span class="tweet-avatar-fallback">{{ avatarLetter }}</span>
       </div>
       <div class="tweet-author-text">
         <div class="tweet-name">{{ tweet.author }}</div>
