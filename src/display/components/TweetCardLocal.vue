@@ -57,7 +57,7 @@ const avatarUrl = computed(() =>
       />
     </div>
 
-    <a :href="tweet.tweetUrl" target="_blank" class="tweet-link">
+    <a :href="tweet.tweetUrl" target="_blank" rel="noopener noreferrer" class="tweet-link">
       在 X 上查看原文
     </a>
   </div>

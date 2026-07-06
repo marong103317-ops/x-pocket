@@ -198,7 +198,7 @@ async function clearAllTweets() {
         </div>
       </div>
       <p class="sponsor-tip">感谢支持 ❤️</p>
-      <a class="github-link" href="https://github.com/marong103317-ops/x-pocket" target="_blank">
+      <a class="github-link" href="https://github.com/marong103317-ops/x-pocket" target="_blank" rel="noopener noreferrer">
         ⭐ GitHub
       </a>
     </div>

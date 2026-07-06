@@ -48,7 +48,7 @@ function onKeydown(e: KeyboardEvent) {
       </div>
 
       <div class="detail-footer">
-        <a :href="tweet.tweetUrl" target="_blank" class="detail-link">🔗 在 X 上查看原文</a>
+        <a :href="tweet.tweetUrl" target="_blank" rel="noopener noreferrer" class="detail-link">🔗 在 X 上查看原文</a>
         <button class="detail-delete" @click="emit('delete', tweet.id)">🗑 删除</button>
       </div>
     </div>

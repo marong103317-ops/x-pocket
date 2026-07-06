@@ -32,7 +32,7 @@ function onCheckboxClick(e: Event) { e.stopPropagation(); selectionStore.toggle(
       </div>
       <div class="list-body">{{ tweet.contentText }}</div>
       <div class="list-footer">
-        <a :href="tweet.tweetUrl" target="_blank" class="list-origin" @click.stop>🔗 原文</a>
+        <a :href="tweet.tweetUrl" target="_blank" rel="noopener noreferrer" class="list-origin" @click.stop>🔗 原文</a>
         <button class="list-delete" @click.stop="emit('delete', tweet.id)">🗑 删除</button>
       </div>
     </div>
