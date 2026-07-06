@@ -2,24 +2,18 @@ import { defineManifest } from '@crxjs/vite-plugin'
 
 export default defineManifest({
   manifest_version: 3,
-  name: 'X-Pocket',
+  name: 'Pocket for X',
   version: '0.1.0',
-  description: '收藏和管理 X.com 推文嵌入代码',
+  description: '一键收藏 X.com (Twitter) 推文嵌入代码，支持本地浏览、标签管理、多格式导出',
   permissions: [
     'storage',
     'contextMenus',
-    'scripting',
-    'activeTab',
     'notifications',
-    'downloads',
   ],
-  optional_permissions: [],
   host_permissions: [
     'https://x.com/*',
     'https://twitter.com/*',
     'https://publish.twitter.com/*',
-    'https://platform.x.com/*',
-    'https://platform.twitter.com/*',
   ],
   background: {
     service_worker: 'src/background/index.ts',
@@ -27,7 +21,7 @@ export default defineManifest({
   },
   action: {
     default_popup: 'src/popup/index.html',
-    default_title: 'X-Pocket',
+    default_title: 'Pocket for X — 收藏推文',
   },
   content_scripts: [
     {
