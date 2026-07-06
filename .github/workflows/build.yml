@@ -34,9 +34,9 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: x-pocket-v${{ github.run_number }}
+          name: pocket-for-x-v${{ github.run_number }}
           path: |
-            x-pocket-v*.crx
+            pocket-for-x-v*.crx
             extension.zip
 
       - name: Create GitHub Release
@@ -59,4 +59,4 @@ jobs:
             --title "X-Pocket $TAG" \
             --notes "自动发布 (push to main, run #${{ github.run_number }})" \
             --latest \
-            x-pocket-v*.crx extension.zip
+            pocket-for-x-v*.crx extension.zip

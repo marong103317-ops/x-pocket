@@ -24,7 +24,7 @@ const DIST = resolve(ROOT, 'dist')
 const ZIP_PATH = resolve(ROOT, 'extension.zip')
 const PACKAGE_JSON = JSON.parse(readFileSync(resolve(ROOT, 'package.json'), 'utf-8'))
 const VERSION = PACKAGE_JSON.version
-const CRX_OUTPUT = resolve(ROOT, `x-pocket-v${VERSION}.crx`)
+const CRX_OUTPUT = resolve(ROOT, `pocket-for-x-v${VERSION}.crx`)
 
 // ═══════════════════════════════════════════════════════
 // 工具函数
