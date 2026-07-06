@@ -13,9 +13,7 @@ export default defineManifest({
     'notifications',
     'downloads',
   ],
-  optional_permissions: [
-    'unlimitedStorage',
-  ],
+  optional_permissions: [],
   host_permissions: [
     'https://x.com/*',
     'https://twitter.com/*',
