@@ -255,6 +255,21 @@ async function clearAllTweets() {
         </div>
       </div>
     </div>
+    <div class="settings-section sponsor-section">
+      <h3>☕ 赞助</h3>
+      <p class="sponsor-desc">如果 X-Pocket 对你有帮助，欢迎请我喝杯咖啡</p>
+      <div class="sponsor-codes">
+        <div class="sponsor-item">
+          <img src="/sponsor/alipay.jpg" alt="支付宝" class="sponsor-img" />
+          <span>支付宝</span>
+        </div>
+        <div class="sponsor-item">
+          <img src="/sponsor/wechat.jpg" alt="微信支付" class="sponsor-img" />
+          <span>微信支付</span>
+        </div>
+      </div>
+      <p class="sponsor-tip">感谢支持 ❤️</p>
+    </div>
   </div>
 </template>
 
@@ -286,4 +301,10 @@ async function clearAllTweets() {
 .clear-warn { font-size: 13px; color: var(--color-danger); font-weight: 500; }
 .clear-yes { padding: 4px 12px; background: var(--color-danger); border: none; border-radius: var(--radius-full); font-size: 12px; color: #fff; cursor: pointer; }
 .clear-no { padding: 4px 12px; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-full); font-size: 12px; cursor: pointer; }
+.sponsor-section { border-bottom: none; text-align: center; }
+.sponsor-desc { font-size: 14px; color: var(--color-text); margin-bottom: 16px; }
+.sponsor-codes { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; }
+.sponsor-item { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary); }
+.sponsor-img { width: 160px; height: 176px; border-radius: 8px; }
+.sponsor-tip { font-size: 11px; color: var(--color-text-tertiary); margin-top: 8px; }
 </style>

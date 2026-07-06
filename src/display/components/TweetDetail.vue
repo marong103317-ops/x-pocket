@@ -42,7 +42,7 @@ function onKeydown(e: KeyboardEvent) {
       </div>
 
       <div ref="containerRef" class="detail-content">
-        <div v-if="!nativeReady && !nativeError" class="detail-loading">加载中...</div>
+        <div v-if="!nativeReady && !nativeError" class="detail-loading-bar">样式加载中...</div>
         <div v-if="nativeError" class="detail-error">{{ nativeError }}</div>
         <div v-html="tweet.blockquoteHtml" />
       </div>
@@ -71,8 +71,12 @@ function onKeydown(e: KeyboardEvent) {
 .detail-close { background: none; border: none; font-size: 20px; color: #536471; cursor: pointer; padding: 4px 8px; border-radius: 50%; line-height: 1; }
 .detail-close:hover { background: #f7f9f9; }
 .detail-content { padding: 0 20px; min-height: 120px; }
-.detail-loading { text-align: center; padding: 40px; color: #536471; font-size: 14px; }
-.detail-error { padding: 8px; background: #fef3c7; color: #92400e; font-size: 13px; border-radius: 4px; margin-bottom: 8px; }
+.detail-loading-bar {
+  font-size: 12px; color: #1d9bf0; padding: 6px 0 8px;
+  text-align: center; animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+.detail-error { padding: 6px 0 8px; color: #92400e; font-size: 12px; text-align: center; }
 .detail-footer {
   display: flex; justify-content: space-between; align-items: center;
   padding: 12px 20px 16px; border-top: 1px solid rgb(207,217,222); margin-top: 12px;

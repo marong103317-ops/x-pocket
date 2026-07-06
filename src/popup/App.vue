@@ -4,11 +4,15 @@ import PasteCollector from './components/PasteCollector.vue'
 import RecentList from './components/RecentList.vue'
 import OpenDisplay from './components/OpenDisplay.vue'
 
-// Refresh key to force RecentList to reload after a new collection
 const recentListKey = ref(0)
 
 function onCollected() {
   recentListKey.value++
+}
+
+function openSponsor() {
+  const url = chrome.runtime.getURL('src/display/index.html')
+  chrome.tabs.create({ url: url + '#/settings' })
 }
 </script>
 
@@ -16,6 +20,7 @@ function onCollected() {
   <div class="popup-container">
     <header class="popup-header">
       <h2>X-Pocket</h2>
+      <a class="sponsor-link" href="#" @click.prevent="openSponsor">☕</a>
     </header>
 
     <PasteCollector @collected="onCollected" />
@@ -44,12 +49,16 @@ html, body {
   padding: 16px;
 }
 
-.popup-header h2 {
-  margin: 0 0 12px 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: #0f1419;
+.popup-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
 }
+.popup-header h2 {
+  margin: 0; font-size: 16px; font-weight: 700; color: #0f1419;
+}
+.sponsor-link {
+  font-size: 18px; text-decoration: none; color: #536471; padding: 2px 6px; border-radius: 4px;
+}
+.sponsor-link:hover { background: #f7f9f9; }
 
 .popup-footer {
   margin-top: 12px;
