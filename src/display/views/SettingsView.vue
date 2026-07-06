@@ -198,6 +198,9 @@ async function clearAllTweets() {
         </div>
       </div>
       <p class="sponsor-tip">感谢支持 ❤️</p>
+      <a class="github-link" href="https://github.com/marong103317-ops/x-pocket" target="_blank">
+        ⭐ GitHub
+      </a>
     </div>
   </div>
 </template>
@@ -236,4 +239,11 @@ async function clearAllTweets() {
 .sponsor-item { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary); }
 .sponsor-img { width: 160px; height: 176px; border-radius: 8px; }
 .sponsor-tip { font-size: 11px; color: var(--color-text-tertiary); margin-top: 8px; }
+.github-link {
+  display: inline-block; margin-top: 12px; padding: 6px 20px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-full);
+  font-size: 13px; color: var(--color-text); text-decoration: none;
+  transition: background 0.15s;
+}
+.github-link:hover { background: var(--color-bg-secondary); }
 </style>
