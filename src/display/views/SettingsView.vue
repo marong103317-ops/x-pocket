@@ -8,7 +8,8 @@ import { downloadBlob } from '@/shared/utils/download'
 import { importFromJson } from '@/shared/importer/json'
 import { getAllTweets, addTweet, deleteTweet } from '@/shared/storage/tweetStore'
 import type { CollectedTweet } from '@/shared/types/tweet'
-import { generateId } from '@/shared/utils/id'
+import { SeedDataService } from '@/shared/services/seedDataService'
+import { seedAuthors, seedContents } from '@/shared/data/seedData'
 
 const router = useRouter()
 const settingsStore = useSettingsStore()
