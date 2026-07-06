@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+
+# CRX 签名密钥（切勿提交！）
+key.pem
+key.pub.pem
+dist.pem
+*.crx
+extension.zip
+
+# 覆盖率报告
+coverage/
+.trae/
