@@ -12,7 +12,7 @@
 
 import { execSync } from 'node:child_process'
 import crypto from 'node:crypto'
-import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -154,9 +154,7 @@ function main() {
 
   console.log(`[pack-crx] ✅ 已生成: ${CRX_OUTPUT}`)
   console.log(`[pack-crx] 文件大小: ${(crxData.length / 1024).toFixed(1)} KB`)
-
-  // 9. 清理临时 zip
-  unlinkSync(ZIP_PATH)
+  console.log(`[pack-crx] ✅ 已保留: ${ZIP_PATH}`)
 }
 
 function createZip() {

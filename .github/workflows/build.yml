@@ -35,3 +35,25 @@ jobs:
           path: |
             x-pocket-v*.crx
             extension.zip
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v$VERSION"
+
+          # 清理已有 release 和 tag
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          git push origin --delete "$TAG" 2>/dev/null || true
+
+          # 重新打 tag 并推送
+          git tag "$TAG"
+          git push origin "$TAG"
+
+          # 创建 release 并上传产物
+          gh release create "$TAG" \
+            --title "X-Pocket $TAG" \
+            --notes "自动发布 (push to main, run #${{ github.run_number }})" \
+            --latest \
+            x-pocket-v*.crx extension.zip
