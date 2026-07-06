@@ -7,10 +7,10 @@ import { getAllTweets, deleteTweet } from '@/shared/storage/tweetStore'
 import { generateId } from '@/shared/utils/id'
 import { normalizeTweetUrl } from '@/shared/parser/urlParser'
 
-console.log('[X-Pocket] Background service worker started')
+console.log('[Pocket for X] Background service worker started')
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('[X-Pocket] Extension installed, setting up context menus')
+  console.log('[Pocket for X] Extension installed, setting up context menus')
   setupContextMenus()
 })
 
@@ -33,7 +33,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
   if (!tweetUrl) {
     chrome.notifications.create({
-      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'X-Pocket',
+      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'Pocket for X',
       message: '未能获取推文链接，请在推文的时间戳链接上右键重试',
     })
     return
@@ -49,12 +49,12 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       collectedAt: new Date().toISOString(),
     })
     chrome.notifications.create({
-      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'X-Pocket',
-      message: '已收藏到 X-Pocket',
+      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'Pocket for X',
+      message: '已收藏到 Pocket for X',
     })
   } else {
     chrome.notifications.create({
-      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'X-Pocket',
+      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'Pocket for X',
       message: '该推文可能已被删除或设为私有',
     })
   }
@@ -85,8 +85,8 @@ onMessage('COLLECT_TWEET_BY_URL', async (msg) => {
       collectedAt: new Date().toISOString(),
     })
     chrome.notifications.create({
-      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'X-Pocket',
-      message: '已收藏到 X-Pocket',
+      type: 'basic', iconUrl: 'icons/icon-48.png', title: 'Pocket for X',
+      message: '已收藏到 Pocket for X',
     })
   }
 })
@@ -99,9 +99,9 @@ onMessage('UNCOLLECT_TWEET', async (msg) => {
   const match = tweets.find(t => t.tweetUrl === normalizedUrl)
   if (match) {
     await deleteTweet(match.id)
-    console.log('[X-Pocket] Removed:', normalizedUrl)
+    console.log('[Pocket for X] Removed:', normalizedUrl)
   }
 })
 
 chrome.action.setBadgeText({ text: '' })
-console.log('[X-Pocket] Background worker ready')
+console.log('[Pocket for X] Background worker ready')

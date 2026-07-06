@@ -16,7 +16,7 @@ describe('contextMenus', () => {
     expect(chrome.contextMenus.create).toHaveBeenCalledWith(
       expect.objectContaining({
         id: 'x-pocket-collect-tweet',
-        title: '收藏此推文到 X-Pocket',
+        title: '收藏此推文到 Pocket for X',
         contexts: ['link', 'page'],
       })
     )

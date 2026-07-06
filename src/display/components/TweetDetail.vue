@@ -24,7 +24,7 @@ onMounted(async () => {
     nativeReady.value = true
   } catch (e) {
     nativeError.value = '原生渲染加载失败'
-    console.warn('[X-Pocket] Native render failed:', e)
+    console.warn('[Pocket for X] Native render failed:', e)
   }
 })
 

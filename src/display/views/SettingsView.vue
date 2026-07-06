@@ -44,7 +44,7 @@ watch(theme, (val) => {
 function handleExport() {
   const tweets = tweetsStore.filteredTweets
   const blob = exportTweets({ format: 'json', tweets })
-  const filename = `x-pocket-export-${new Date().toISOString().slice(0, 10)}.json`
+  const filename = `pocket-for-x-export-${new Date().toISOString().slice(0, 10)}.json`
   downloadBlob(blob, filename)
 }
 
@@ -186,7 +186,7 @@ async function clearAllTweets() {
     </div>
     <div class="settings-section sponsor-section">
       <h3>☕ 赞助</h3>
-      <p class="sponsor-desc">如果 X-Pocket 对你有帮助，欢迎请我喝杯咖啡</p>
+      <p class="sponsor-desc">如果 Pocket for X 对你有帮助，欢迎请我喝杯咖啡</p>
       <div class="sponsor-codes">
         <div class="sponsor-item">
           <img src="/sponsor/alipay.jpg" alt="支付宝" class="sponsor-img" />
@@ -199,7 +199,7 @@ async function clearAllTweets() {
       </div>
       <p class="sponsor-blessing">老板大气，祝老板六六大顺</p>
       <p class="sponsor-tip">感谢支持 ❤️</p>
-      <a class="github-link" href="https://github.com/marong103317-ops/x-pocket" target="_blank" rel="noopener noreferrer">
+      <a class="github-link" href="https://github.com/marong103317-ops/pocket-for-x" target="_blank" rel="noopener noreferrer">
         ⭐ GitHub
       </a>
     </div>

@@ -16,7 +16,7 @@ export function exportMarkdown(tweets: CollectedTweet[]): Blob {
   })
 
   const md = [
-    '# X-Pocket 收藏导出',
+    '# Pocket for X 收藏导出',
     '',
     `共 ${tweets.length} 条，导出于 ${new Date().toISOString()}`,
     '',

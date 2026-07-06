@@ -9,7 +9,7 @@ if ((window as any).__x_pocket_injected) {
 import { initTweetFinder, getLastTweetUrl, findTweetUrl } from './tweetFinder'
 import type { RuntimeMessage } from '@/shared/types/messages'
 
-console.log('[X-Pocket] Content script loaded')
+console.log('[Pocket for X] Content script loaded')
 
 initTweetFinder()
 
@@ -37,7 +37,7 @@ document.addEventListener('click', (e) => {
       type: 'UNCOLLECT_TWEET',
       tweetUrl,
     } as RuntimeMessage).catch(() => {})
-    console.log('[X-Pocket] Unlike → remove:', tweetUrl)
+    console.log('[Pocket for X] Unlike → remove:', tweetUrl)
     return
   }
 
@@ -48,7 +48,7 @@ document.addEventListener('click', (e) => {
     type: 'COLLECT_TWEET_BY_URL',
     tweetUrl,
   } as RuntimeMessage).catch(() => {})
-  console.log('[X-Pocket] Like collected:', tweetUrl)
+  console.log('[Pocket for X] Like collected:', tweetUrl)
 }, true)
 
 // --- Message listeners ---

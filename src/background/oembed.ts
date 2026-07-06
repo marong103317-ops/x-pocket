@@ -23,14 +23,14 @@ export async function fetchOembed(tweetUrl: string): Promise<OembedResult | null
     clearTimeout(timeout)
 
     if (!response.ok) {
-      console.warn(`[X-Pocket] oembed request failed: ${response.status}`)
+      console.warn(`[Pocket for X] oembed request failed: ${response.status}`)
       return null
     }
 
     const data = await response.json() as OembedResult
     return data
   } catch (err) {
-    console.warn('[X-Pocket] oembed fetch error:', err)
+    console.warn('[Pocket for X] oembed fetch error:', err)
     return null
   }
 }

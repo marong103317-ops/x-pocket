@@ -6,7 +6,7 @@ export function setupContextMenus(): void {
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
       id: MENU_ID,
-      title: '收藏此推文到 X-Pocket',
+      title: '收藏此推文到 Pocket for X',
       contexts: ['link', 'page'],
       documentUrlPatterns: [
         'https://x.com/*',

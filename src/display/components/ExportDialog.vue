@@ -49,7 +49,7 @@ function handleExport() {
     downloadBlob(blob, filename)
     emit('close')
   } catch (e) {
-    console.error('[X-Pocket] Export failed:', e)
+    console.error('[Pocket for X] Export failed:', e)
     alert('导出失败，请重试')
   }
 }

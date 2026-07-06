@@ -87,7 +87,7 @@ function handleBatchExport(_ids: string[]) {
   <div class="home-layout">
     <div class="home-header">
       <header class="top-bar">
-        <h1>X-Pocket</h1>
+        <h1>Pocket for X</h1>
         <span class="tweet-count">共 {{ tweetsStore.filteredCount }} 条</span>
         <div class="top-bar-actions">
           <router-link to="/tags" class="nav-link">🏷</router-link>

@@ -15,7 +15,7 @@ export function exportHtml(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>X-Pocket 导出 (${tweets.length} 条)</title>
+  <title>Pocket for X 导出 (${tweets.length} 条)</title>
   <style>
     body{font-family:system-ui,sans-serif;max-width:680px;margin:0 auto;padding:16px;background:#fff;color:#0f1419}
     h1{font-size:1.25rem;border-bottom:1px solid #cfd9de;padding-bottom:8px}
@@ -24,7 +24,7 @@ export function exportHtml(
   </style>
 </head>
 <body>
-  <h1>X-Pocket 收藏导出（${tweets.length} 条）</h1>
+  <h1>Pocket for X 收藏导出（${tweets.length} 条）</h1>
   <div class="tweets">${cards}</div>
   ${script}
 </body>

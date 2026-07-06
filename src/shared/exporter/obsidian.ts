@@ -27,7 +27,7 @@ export function exportObsidian(tweets: CollectedTweet[]): Blob {
   })
 
   const md = [
-    '# X-Pocket → Obsidian',
+    '# Pocket for X → Obsidian',
     '',
     `导出 ${tweets.length} 条推文 · ${new Date().toISOString().slice(0, 10)}`,
     '',

@@ -93,7 +93,7 @@ describe('exportObsidian', () => {
     const blob = exportObsidian([])
     const text = await blob.text()
 
-    expect(text).toContain('# X-Pocket')
+    expect(text).toContain('# Pocket for X')
     expect(text).toContain('0 条')
   })
 })

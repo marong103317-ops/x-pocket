@@ -8,7 +8,7 @@ const tweetsStore = useTweetsStore()
 function handleExport() {
   const tweets = tweetsStore.filteredTweets
   const blob = exportTweets({ format: 'json', tweets })
-  const filename = `x-pocket-export-${new Date().toISOString().slice(0, 10)}.json`
+  const filename = `pocket-for-x-export-${new Date().toISOString().slice(0, 10)}.json`
   downloadBlob(blob, filename)
 }
 </script>

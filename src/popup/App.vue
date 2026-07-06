@@ -19,7 +19,7 @@ function openSponsor() {
 <template>
   <div class="popup-container">
     <header class="popup-header">
-      <h2>X-Pocket</h2>
+      <h2>Pocket for X</h2>
       <a class="sponsor-link" href="#" @click.prevent="openSponsor">☕</a>
     </header>
 

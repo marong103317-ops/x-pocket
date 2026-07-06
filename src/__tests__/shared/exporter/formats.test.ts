@@ -72,7 +72,7 @@ describe('exportTweets - Markdown', () => {
     const blob = exportTweets({ format: 'markdown', tweets })
     const text = await blob.text()
 
-    expect(text).toContain('# X-Pocket 收藏导出')
+    expect(text).toContain('# Pocket for X 收藏导出')
     expect(text).toContain('## 1. @test_user')
     expect(text).toContain('> 这是一条测试推文内容')
     expect(text).toContain('[原文链接](https://x.com/user/status/123)')

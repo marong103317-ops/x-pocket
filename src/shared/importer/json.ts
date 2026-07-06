@@ -15,7 +15,7 @@ export async function importFromJson(file: File): Promise<ImportResult> {
 
     // Validate schema
     if (parsed.schema !== 'x-pocket') {
-      return { imported: 0, skipped: 0, error: '文件格式不正确，请选择 X-Pocket 导出的 JSON 文件' }
+      return { imported: 0, skipped: 0, error: '文件格式不正确，请选择 Pocket for X 导出的 JSON 文件' }
     }
 
     const tweets: CollectedTweet[] = parsed.tweets ?? []
@@ -54,6 +54,6 @@ export async function importFromJson(file: File): Promise<ImportResult> {
 
     return { imported, skipped }
   } catch {
-    return { imported: 0, skipped: 0, error: '文件格式不正确，请选择 X-Pocket 导出的 JSON 文件' }
+    return { imported: 0, skipped: 0, error: '文件格式不正确，请选择 Pocket for X 导出的 JSON 文件' }
   }
 }
