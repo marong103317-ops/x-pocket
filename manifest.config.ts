@@ -40,7 +40,7 @@ export default defineManifest({
   ],
   web_accessible_resources: [
     {
-      resources: ['src/display/index.html'],
+      resources: ['src/display/index.html', 'widgets.js'],
       matches: ['<all_urls>'],
     },
   ],
