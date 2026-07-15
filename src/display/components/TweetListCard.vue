@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import type { CollectedTweet } from '@/shared/types/tweet'
 import { formatDate } from '@/shared/utils/date'
 import { useSelectionStore } from '@/display/stores/selection'
@@ -9,7 +9,6 @@ const emit = defineEmits<{ click: []; delete: [id: string] }>()
 const selectionStore = useSelectionStore()
 const displayDate = computed(() => formatDate(props.tweet.postedAt))
 const avatarLetter = computed(() => props.tweet.author.charAt(0) || props.tweet.handle.charAt(1) || '?')
-const avatarError = ref(false)
 
 function onCheckboxClick(e: Event) { e.stopPropagation(); selectionStore.toggle(props.tweet.id) }
 </script>
